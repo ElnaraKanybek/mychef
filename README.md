@@ -6,7 +6,7 @@ This project was developed for the Web Programming 2 course at John Abbott Colle
  
 Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-recipe-manager#webpage-demonstration) (click here)
  
-## 🗺️Overview
+## Overview
  
 * [Core Functionality](https://github.com/ElnaraKanybek/mychef-recipe-manager#core-functionality)
 * [Requirements](https://github.com/ElnaraKanybek/mychef-recipe-manager#requirements)
@@ -65,7 +65,7 @@ Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-recipe-manage
 - As a user, I want a shortcut on the home page to browse all recipes so I can quickly explore the community's recipes.
 ---
  
-## 🗺️Entity Relationships
+## Entity Relationships
  
 - **User** — has many created Recipes, has many Saved Recipe entries; has a `role` (enum: `'user'` | `'admin'`, default: `'user'`)
 - **Recipe** — belongs to a User (creator), has many Steps, has many Ingredients, belongs to a Category
