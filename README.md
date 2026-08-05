@@ -159,6 +159,12 @@ Returning users log in with their username and password. A successful login star
 ![Home page](images/dashboard.png)
  
 After logging in, the user is greeted by name ("Hello, *User*!") and sees a list of trending recipes for the week, along with a "Browse Recipes" shortcut that jumps straight to the All Recipes page. Admin accounts also see a "See All Users" button here for user management.
+
+**Recipe Detail View:**
+ 
+![Single recipe view](images/recipe-detail.png)
+ 
+Viewing a single recipe shows its picture, preparation time, servings, category, and the full list of ingredients and steps needed to make it, along with who created it. At the bottom, the recipe's creator sees Delete and Edit buttons for their own recipe; an admin sees the Delete button on any recipe, even ones they didn't create; and any logged-in user can Save the recipe to their Saved Recipes list.
  
 **Browsing All Recipes:**
  
@@ -178,11 +184,6 @@ Users build a new recipe by entering its name, an optional picture link, prepara
  
 Recipes a user has saved from browsing are listed here with their category and the date they were added, with a "Remove" button to take a recipe off the list.
  
-**Recipe Detail View:**
- 
-![Single recipe view](images/recipe-detail.png)
- 
-Viewing a single recipe shows its picture, preparation time, servings, category, and the full list of ingredients and steps needed to make it, along with who created it. At the bottom, the recipe's creator sees Delete and Edit buttons for their own recipe; an admin sees the Delete button on any recipe, even ones they didn't create; and any logged-in user can Save the recipe to their Saved Recipes list.
  
 ---
  
