@@ -2,7 +2,7 @@
  
 By [Elnara Kanybek](https://github.com/ElnaraKanybek) and [Christel Edee](https://github.com/ChristelEdee)
  
-This project was developed for the Web Programming 3 course at John Abbott College.
+This project was developed for the Web Programming 2 course at John Abbott College.
  
 Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-app#webpage-demonstration) (click here)
  
