@@ -4,18 +4,18 @@ By [Elnara Kanybek](https://github.com/ElnaraKanybek) and [Christel Edee](https:
  
 This project was developed for the Web Programming 2 course at John Abbott College.
  
-Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-app#webpage-demonstration) (click here)
+Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-recipe-manager#webpage-demonstration) (click here)
  
 ## 🗺️Overview
  
-* [Core Functionality](https://github.com/ElnaraKanybek/mychef-app#core-functionality)
-* [Requirements](https://github.com/ElnaraKanybek/mychef-app#requirements)
-* [Entity Relationships](https://github.com/ElnaraKanybek/mychef-app#entity-relationships)
-* [API Routes](https://github.com/ElnaraKanybek/mychef-app#api-routes)
-* [Webpage Demo](https://github.com/ElnaraKanybek/mychef-app#webpage-demonstration)
-* [Tech Stack](https://github.com/ElnaraKanybek/mychef-app#tech-stack)
-* [Project Structure](https://github.com/ElnaraKanybek/mychef-app#project-structure)
-* [Getting Started](https://github.com/ElnaraKanybek/mychef-app#getting-started)
+* [Core Functionality](https://github.com/ElnaraKanybek/mychef-recipe-manager#core-functionality)
+* [Requirements](https://github.com/ElnaraKanybek/mychef-recipe-manager#requirements)
+* [Entity Relationships](https://github.com/ElnaraKanybek/mychef-recipe-manager#entity-relationships)
+* [API Routes](https://github.com/ElnaraKanybek/mychef-recipe-manager#api-routes)
+* [Webpage Demo](https://github.com/ElnaraKanybek/mychef-recipe-manager#webpage-demonstration)
+* [Tech Stack](https://github.com/ElnaraKanybek/mychef-recipe-manager#tech-stack)
+* [Project Structure](https://github.com/ElnaraKanybek/mychef-recipe-manager#project-structure)
+* [Getting Started](https://github.com/ElnaraKanybek/mychef-recipe-manager#getting-started)
 ## Core Functionality
  
 **Browsing Recipes:** Users can browse all posted recipes, sortable and filterable by category. Each recipe row shows the recipe name, creator username, and category, with a Save button to add it to the user's Saved Recipes list.
@@ -158,23 +158,19 @@ Returning users log in with their username and password. A successful login star
  
 ![Home page](images/dashboard.png)
  
-After logging in, the user is greeted by name ("Hello, *User* !") and sees a list of trending recipes for the week, along with a "Browse Recipes" shortcut that jumps straight to the All Recipes page. Admin accounts also see a "See All Users" button here for user management.
-
-![Single recipe view](images/recipe-detail.png)
- 
-Viewing a single recipe shows its picture, preparation time, servings, category, and the full list of ingredients and steps needed to make it, along with who created it. At the bottom, the recipe's creator sees Delete and Edit buttons for their own recipe; an admin sees the Delete button on any recipe, even ones they didn't create; and any logged-in user can Save the recipe to their Saved Recipes list.
+After logging in, the user is greeted by name ("Hello, *User*!") and sees a list of trending recipes for the week, along with a "Browse Recipes" shortcut that jumps straight to the All Recipes page. Admin accounts also see a "See All Users" button here for user management.
  
 **Browsing All Recipes:**
  
 ![All recipes list](images/all-recipes.png)
  
-Every posted recipe is listed with its name, creator, preparation time, and category. Users can sort by name and preparation time, order by ascending/descending and filter by category. Additionally,they can save any recipe to their personal Saved Recipes list with a single click.
+Every posted recipe is listed with its name, creator, preparation time, and category. Users can sort by name and preparation time, order by ascending/descending, and filter by category. They can also save any recipe to their personal Saved Recipes list with a single click.
  
 **Create Recipe:**
  
 ![Create recipe form](images/create-recipe.png)
  
-Users build a new recipe by entering its name, an optional picture link, preparation time, servings, and category, then add/ remove ingredients and preparation steps directly in the form before submitting.
+Users build a new recipe by entering its name, an optional picture link, preparation time, servings, and category, then add/remove ingredients and preparation steps directly in the form before submitting.
  
 **Saved Recipes:**
  
@@ -184,6 +180,9 @@ Recipes a user has saved from browsing are listed here with their category and t
  
 **Recipe Detail View:**
  
+![Single recipe view](images/recipe-detail.png)
+ 
+Viewing a single recipe shows its picture, preparation time, servings, category, and the full list of ingredients and steps needed to make it, along with who created it. At the bottom, the recipe's creator sees Delete and Edit buttons for their own recipe; an admin sees the Delete button on any recipe, even ones they didn't create; and any logged-in user can Save the recipe to their Saved Recipes list.
  
 ---
  
@@ -279,13 +278,11 @@ images/
    cd client && npm install
 ```
 3. Set up a local Postgres database named `TodoDB` (or update `app.ts` to match your own database name), and configure a `.env` file with your `HOST` and `PORT` if you want to override the defaults.
-
 4. Start the client:
 ```bash
    cd client
    npm run dev
 ```
-
 5. Start the server:
 ```bash
    cd server
@@ -345,3 +342,4 @@ images/
 - SavedRecipes.tsx
 - AllRecipes.tsx
 - RecipeView.tsx
+ 
