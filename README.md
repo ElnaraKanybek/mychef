@@ -73,7 +73,53 @@ Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-recipe-manage
 - **Ingredient** — belongs to a Recipe
 - **Saved Recipe** — join table between User and Recipe
 ---
+
+## ✨Webpage Demonstration
  
+**Sign In:**
+ 
+![Sign in page](images/sign-in.png)
+ 
+New users register by providing a username, first name, and password. On success, the account is created and the user is logged in immediately.
+ 
+**Log In:**
+ 
+![Log in page](images/log-in.png)
+ 
+Returning users log in with their username and password. A successful login starts a session and redirects to the home page.
+ 
+**Home Page:**
+ 
+![Home page](images/dashboard.png)
+ 
+After logging in, the user is greeted by name ("Hello, *User*!") and sees a list of trending recipes for the week, along with a "Browse Recipes" shortcut that jumps straight to the All Recipes page. Admin accounts also see a "See All Users" button here for user management.
+
+**Recipe Detail View:**
+ 
+![Single recipe view](images/recipe-detail.png)
+ 
+Viewing a single recipe shows its picture, preparation time, servings, category, and the full list of ingredients and steps needed to make it, along with who created it. At the bottom, the recipe's creator sees Delete and Edit buttons for their own recipe; an admin sees the Delete button on any recipe, even ones they didn't create; and any logged-in user can Save the recipe to their Saved Recipes list.
+ 
+**Browsing All Recipes:**
+ 
+![All recipes list](images/all-recipes.png)
+ 
+Every posted recipe is listed with its name, creator, preparation time, and category. Users can sort by name and preparation time, order by ascending/descending, and filter by category. They can also save any recipe to their personal Saved Recipes list with a single click.
+ 
+**Create Recipe:**
+ 
+![Create recipe form](images/create-recipe.png)
+ 
+Users build a new recipe by entering its name, an optional picture link, preparation time, servings, and category, then add/remove ingredients and preparation steps directly in the form before submitting.
+ 
+**Saved Recipes:**
+ 
+![Saved recipes list](images/saved-recipes.png)
+ 
+Recipes a user has saved from browsing are listed here with their category and the date they were added, with a "Remove" button to take a recipe off the list.
+
+---
+
 ## API Routes
  
 ### Authentication
@@ -139,53 +185,7 @@ Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-recipe-manage
 | requireAdmin | session.role === 'admin'            | All /admin/\* routes                          |
  
 ---
- 
-## ✨Webpage Demonstration
- 
-**Sign In:**
- 
-![Sign in page](images/sign-in.png)
- 
-New users register by providing a username, first name, and password. On success, the account is created and the user is logged in immediately.
- 
-**Log In:**
- 
-![Log in page](images/log-in.png)
- 
-Returning users log in with their username and password. A successful login starts a session and redirects to the home page.
- 
-**Home Page:**
- 
-![Home page](images/dashboard.png)
- 
-After logging in, the user is greeted by name ("Hello, *User*!") and sees a list of trending recipes for the week, along with a "Browse Recipes" shortcut that jumps straight to the All Recipes page. Admin accounts also see a "See All Users" button here for user management.
 
-**Recipe Detail View:**
- 
-![Single recipe view](images/recipe-detail.png)
- 
-Viewing a single recipe shows its picture, preparation time, servings, category, and the full list of ingredients and steps needed to make it, along with who created it. At the bottom, the recipe's creator sees Delete and Edit buttons for their own recipe; an admin sees the Delete button on any recipe, even ones they didn't create; and any logged-in user can Save the recipe to their Saved Recipes list.
- 
-**Browsing All Recipes:**
- 
-![All recipes list](images/all-recipes.png)
- 
-Every posted recipe is listed with its name, creator, preparation time, and category. Users can sort by name and preparation time, order by ascending/descending, and filter by category. They can also save any recipe to their personal Saved Recipes list with a single click.
- 
-**Create Recipe:**
- 
-![Create recipe form](images/create-recipe.png)
- 
-Users build a new recipe by entering its name, an optional picture link, preparation time, servings, and category, then add/remove ingredients and preparation steps directly in the form before submitting.
- 
-**Saved Recipes:**
- 
-![Saved recipes list](images/saved-recipes.png)
- 
-Recipes a user has saved from browsing are listed here with their category and the date they were added, with a "Remove" button to take a recipe off the list.
- 
- 
----
  
 ## 🛠️Tech Stack
  
