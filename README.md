@@ -4,16 +4,16 @@ By [Elnara Kanybek](https://github.com/ElnaraKanybek) and [Christel Edee](https:
  
 This project was developed for the Web Programming 3 course at John Abbott College.
  
-Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-app#%EF%B8%8Fwebpage-demonstration) (click here)
+Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-app#webpage-demonstration) (click here)
  
 ## 🗺️Overview
  
 * [Core Functionality](https://github.com/ElnaraKanybek/mychef-app#core-functionality)
 * [Requirements](https://github.com/ElnaraKanybek/mychef-app#requirements)
-* [Entity Relationships](https://github.com/ElnaraKanybek/mychef-app#%EF%B8%8Fentity-relationships)
+* [Entity Relationships](https://github.com/ElnaraKanybek/mychef-app#entity-relationships)
 * [API Routes](https://github.com/ElnaraKanybek/mychef-app#api-routes)
-* [Webpage Demo](https://github.com/ElnaraKanybek/mychef-app#%EF%B8%8Fwebpage-demonstration)
-* [Tech Stack](https://github.com/ElnaraKanybek/mychef-app#%EF%B8%8Ftech-stack)
+* [Webpage Demo](https://github.com/ElnaraKanybek/mychef-app#webpage-demonstration)
+* [Tech Stack](https://github.com/ElnaraKanybek/mychef-app#tech-stack)
 * [Project Structure](https://github.com/ElnaraKanybek/mychef-app#project-structure)
 * [Getting Started](https://github.com/ElnaraKanybek/mychef-app#getting-started)
 ## Core Functionality
@@ -66,8 +66,6 @@ Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-app#%EF%B8%8F
 ---
  
 ## 🗺️Entity Relationships
- 
-![Entity relationship diagram](images/excalidraw.png)
  
 - **User** — has many created Recipes, has many Saved Recipe entries; has a `role` (enum: `'user'` | `'admin'`, default: `'user'`)
 - **Recipe** — belongs to a User (creator), has many Steps, has many Ingredients, belongs to a Category
@@ -144,21 +142,48 @@ Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-app#%EF%B8%8F
  
 ## ✨Webpage Demonstration
  
+**Sign In:**
+ 
+![Sign in page](images/sign-in.png)
+ 
+New users register by providing a username, first name, and password. On success, the account is created and the user is logged in immediately.
+ 
 **Log In:**
  
-![Log in page](images/login-view.png)
+![Log in page](images/log-in.png)
+ 
+Returning users log in with their username and password. A successful login starts a session and redirects to the home page.
  
 **Home Page:**
  
-![Home page](images/profile-view.png)
+![Home page](images/dashboard.png)
+ 
+After logging in, the user is greeted by name ("Hello, *User* !") and sees a list of trending recipes for the week, along with a "Browse Recipes" shortcut that jumps straight to the All Recipes page. Admin accounts also see a "See All Users" button here for user management.
+
+![Single recipe view](images/recipe-detail.png)
+ 
+Viewing a single recipe shows its picture, preparation time, servings, category, and the full list of ingredients and steps needed to make it, along with who created it. At the bottom, the recipe's creator sees Delete and Edit buttons for their own recipe; an admin sees the Delete button on any recipe, even ones they didn't create; and any logged-in user can Save the recipe to their Saved Recipes list.
  
 **Browsing All Recipes:**
  
-![All recipes list](images/collab.png)
+![All recipes list](images/all-recipes.png)
+ 
+Every posted recipe is listed with its name, creator, preparation time, and category. Users can sort by name and preparation time, order by ascending/descending and filter by category. Additionally,they can save any recipe to their personal Saved Recipes list with a single click.
+ 
+**Create Recipe:**
+ 
+![Create recipe form](images/create-recipe.png)
+ 
+Users build a new recipe by entering its name, an optional picture link, preparation time, servings, and category, then add/ remove ingredients and preparation steps directly in the form before submitting.
+ 
+**Saved Recipes:**
+ 
+![Saved recipes list](images/saved-recipes.png)
+ 
+Recipes a user has saved from browsing are listed here with their category and the date they were added, with a "Remove" button to take a recipe off the list.
  
 **Recipe Detail View:**
  
-![Single recipe view](images/show-view.png)
  
 ---
  
@@ -233,19 +258,20 @@ app.ts
 url.ts
  
 images/
-├── collab.png
-├── excalidraw.png
-├── login-view.png
-├── profile-view.png
-└── show-view.png
+├── all-recipes.png
+├── create-recipe.png
+├── dashboard.png
+├── log-in.png
+├── recipe-detail.png
+├── saved-recipes.png
+└── sign-in.png
 ```
  
 ## Getting Started
  
 1. Clone the repo:
 ```bash
-   git clone https://github.com/ElnaraKanybek/mychef-app.git
-   cd mychef-app
+   git clone https://github.com/ElnaraKanybek/mychef-recipe-manager.git
 ```
 2. Install dependencies for both the server and client:
 ```bash
@@ -253,13 +279,69 @@ images/
    cd client && npm install
 ```
 3. Set up a local Postgres database named `TodoDB` (or update `app.ts` to match your own database name), and configure a `.env` file with your `HOST` and `PORT` if you want to override the defaults.
-4. Start the server:
-```bash
-   npx tsx app.ts
-```
-5. Start the client:
+
+4. Start the client:
 ```bash
    cd client
    npm run dev
 ```
+
+5. Start the server:
+```bash
+   cd server
+   npm run server
+```
 6. Open the client at `http://localhost:5173` in your browser.
+# Code Design
+ 
+## Server
+ 
+### Controller Methods:
+ 
+**Admin**
+ 
+- getAllUsers() ("/admin/users")
+- getAllRecipesAdmin() ("/admin/recipes")
+- deleteUser() ("/admin/users/:userId")
+- deleteRecipeAdmin() ("/admin/recipes/:recipeId")
+**All Recipes**
+ 
+- createRecipe() ("/recipes")
+- getAllRecipes() ("/recipes")
+- getOneRecipe() ("/recipes/:recipeId")
+- updateRecipe() ("/recipes/:recipeId")
+- deleteRecipe() ("/recipes/:recipeId")
+**Users' Recipes**
+ 
+- getMyRecipes() ("/users/:userId/recipes")
+- getSavedRecipes() ("/users/:userId/saved")
+- addRecipeToSavedList() ("/users/:userId/saved")
+- deleteRecipeFromSavedList("/users/:userId/saved/:recipeId")
+**Steps and Ingredients**
+ 
+- addStepToRecipe() ("/recipes/:recipeId/steps")
+- updateRecipeStep() ("/recipes/:recipeId/steps/:stepId")
+- deleteRecipeStep() ("/recipes/:recipeId/steps/:stepId")
+- addIngredient() ("/recipes/:recipeId/ingredients")
+- deleteIngredient() ("/recipes/:recipeId/ingredients")
+### Models:
+ 
+- User.ts
+- Recipe.ts
+- Ingredient.ts
+- RecipeStep.ts
+## Client
+ 
+### Components
+ 
+- NavBar.tsx
+- AppNavigation.tsx
+- Home.tsx
+- Footer.tsx
+- SignUp.tsx
+- Login.tsx
+- CreateRecipe.tsx
+- MyRecipes.tsx
+- SavedRecipes.tsx
+- AllRecipes.tsx
+- RecipeView.tsx
