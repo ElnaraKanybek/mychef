@@ -66,7 +66,9 @@ Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-recipe-manage
 ---
  
 ## Entity Relationships
- 
+
+![Entity relationship diagram](images/entity-relationships.png)
+
 - **User** — has many created Recipes, has many Saved Recipe entries; has a `role` (enum: `'user'` | `'admin'`, default: `'user'`)
 - **Recipe** — belongs to a User (creator), has many Steps, has many Ingredients, belongs to a Category
 - **Step** — belongs to a Recipe, has an order index
