@@ -1,8 +1,8 @@
-# MyChef
+# MyChef 🍽️
  
-By [Elnara Kanybek](https://github.com/ElnaraKanybek) and [Christel Edee](https://github.com/ChristelEdee)
+By [Elnara Kanybek](https://github.com/ElnaraKanybek)
  
-This project was developed for the Web Programming 2 course at John Abbott College.
+MyChef is a full-stack recipe management platform where users can discover, create, save, and manage recipes. It features user authentication, personalized recipe lists, ingredient and step management, recipe filtering and sorting, and role-based admin controls.
  
 Go to demo: [Webpage Demo](https://github.com/ElnaraKanybek/mychef-recipe-manager#webpage-demonstration) (click here)
  
